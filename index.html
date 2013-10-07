@@ -1,4 +1,4 @@
-<html>
+<html ng-app>
 <head>
     <title>Index de prueba</title>
     <link rel="stylesheet" href="css/bootstrap.css" />
@@ -7,18 +7,30 @@
     
     <h1>AngularJS Demo</h1>
     
-    <p>Este es el punto inicial del proyecto.</p>
+    <h2>Vistas y plantillas</h2>
     
-    <p>Hasta ahorita solamente hemos referenciado:</p>
+    <p>Observe que para emplezar a utilizar AngularJS tenemos
+       que especificar que secci&oacute;n de nuestro documento
+       ser&aacute; una AngularApp, en este caso el documento
+       completo es una AngularApp. Notese el atributo <code>&lt;html ng-app&gt;</code>
+    </p>
+    
+    <p>AngularJs utiliza un lenguaje de plantillas (parecido a Ember) 
+        en la que todo el c&oacute;digo que se encuentre entre llaves 
+        es "parseado" por Angular y tambien existen atributos con el 
+        prefijo <code>ng-</code> para escribir las vistas.
+    </p>
+    
+    <p>El resultado de 1 + 1 es {{ 1 + 1 }}</p>
     
     <ul>
-        <li><a href="http://angularjs.org/" target="_blank" title="AngularJS">AngularJS</a> Que utilizaremos mas adelante como nuestro framework SPA.</li>
-        <li><a href="http://getbootstrap.com/" target="_blank" title="Bootstrap">Bootstrap</a> Como css para que no se vea tan mal la aplicacion.</li>
+        <li ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]">
+            Item No. <strong>{{ i }}</strong> con texto concatenado <strong>{{ i * 2 + '.- texto'.toUpperCase() }}</strong>
+        </li>
     </ul>
     
     <blockquote>
-        <strong>Nota:</strong> tambien hacemos referencia al archivo index.js que hasta ahora est&aacute; en blanco,
-        pero que lo utilizaremos para escribir la logica de nuestra aplicacion.
+        <strong>Observaciones:</strong> como ven, se pueden hacer operaciones basicas en las vistas e iterar sobre arreglos.
     </blockquote>
     
     <script src="js/jquery-1.10.2.js"></script>
