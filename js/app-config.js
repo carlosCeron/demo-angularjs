@@ -15,7 +15,7 @@ function configurarRutas($routeProvider) {
             templateUrl: 'views/edit-book.html',
             controller: 'editBookController'})
         .when('/new', {
-            templateUrl: 'views/new-book.html',
+            templateUrl: 'views/edit-book.html',
             controller: 'newBookController'
         })
         .otherwise({
