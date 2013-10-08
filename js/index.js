@@ -1,4 +1,4 @@
-function mainController($scope) {
+function mainController($scope, $window) {
     
     $scope.numeros = [];
     $scope.numero = 100;
@@ -12,6 +12,8 @@ function mainController($scope) {
         if (numero && $scope.numeros.indexOf(numero) === -1) {
             $scope.numeros.push(numero);
             $scope.numero = null;
+        } else {
+            $window.alert('Debe escribir un valido y que no exista en la lista.');
         }
     };
     
