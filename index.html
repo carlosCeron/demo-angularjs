@@ -7,32 +7,23 @@
     
     <h1>AngularJS Demo</h1>
     
-    <h2>Vistas y plantillas</h2>
+    <h2>Model Binding</h2>
     
-    <p>Observe que para emplezar a utilizar AngularJS tenemos
-       que especificar que secci&oacute;n de nuestro documento
-       ser&aacute; una AngularApp, en este caso el documento
-       completo es una AngularApp. Notese el atributo <code>&lt;html ng-app&gt;</code>
+    <p>
+        AngularJs nos permite enlazar informaci&oacute;n (data-binds) tanto del HTMl hacia nuestro 
+        c&oacute;digo Javascript como desde Javascript hacia el codigo HTML.
     </p>
     
-    <p>AngularJs utiliza un lenguaje de plantillas (parecido a Ember) 
-        en la que todo el c&oacute;digo que se encuentre entre llaves 
-        es "parseado" por Angular y tambien existen atributos con el 
-        prefijo <code>ng-</code> para escribir las vistas.
-    </p>
+    <form action="#" role="form">
+        <div class="form-group">
+            <label for="numberTextBox">Email address</label>
+            <input ng-model="numero" type="number" id="numberTextBox" class="form-control" placeholder="Ingrese un numero">
+        </div>
+    </form>
+
+    <p>Ha ingresado el n&uacute;mero <code>{{ numero }}</code> y si lo multiplicamos por <code>2</code> da como resultado <strong>{{ numero * 2 }}</strong></p>
     
-    <p>El resultado de 1 + 1 es {{ 1 + 1 }}</p>
-    
-    <ul>
-        <li ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]">
-            Item No. <strong>{{ i }}</strong> con texto concatenado <strong>{{ i * 2 + '.- texto'.toUpperCase() }}</strong>
-        </li>
-    </ul>
-    
-    <blockquote>
-        <strong>Observaciones:</strong> como ven, se pueden hacer operaciones basicas en las vistas e iterar sobre arreglos.
-    </blockquote>
-    
+
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/angular-1.0.8.js"></script>
     <script src="js/bootstrap-3.0.0.js"></script>
