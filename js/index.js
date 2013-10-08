@@ -51,7 +51,7 @@ function editBookController($scope, $location, $routeParams) {
         
         book.title = $scope.title;
         book.author = $scope.author;
-        book.desciption = $scope.desciption;
+        book.description = $scope.description;
         book.year = $scope.year;
         $location.path('/list');
     };
