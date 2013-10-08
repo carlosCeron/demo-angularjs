@@ -3,7 +3,7 @@
     <title>Index de prueba</title>
     <link rel="stylesheet" href="css/bootstrap.css" />
 </head>
-<body>
+<body ng-controller="mainController">
     
     <h1>AngularJS Demo</h1>
     
@@ -19,14 +19,9 @@
             <label for="numberTextBox">Numero</label>
             <input ng-model="numero" type="number" id="numberTextBox" class="form-control" placeholder="Ingrese un numero">
         </div>
-        
-        <div class="form-group">
-            <label for="numberTextBox2">Numero 2</label>
-            <input ng-model="numero" type="number" id="numberTextBox2" class="form-control" placeholder="Ingrese un numero">
-        </div>
     </form>
 
-    <p>Ha ingresado el n&uacute;mero <code>{{ numero }}</code> y si lo multiplicamos por <code>2</code> da como resultado <strong>{{ numero * 2 }}</strong></p>
+    <p>Ha ingresado el n&uacute;mero <code>{{ numero }}</code> y elevado al cuadrado da como resultado <strong>{{ numeroAlCuadrado() }}</strong></p>
     
 
     <script src="js/jquery-1.10.2.js"></script>
