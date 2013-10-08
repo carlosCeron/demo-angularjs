@@ -23,7 +23,7 @@
         <button type="button" ng-click="agregarNumero()">Agegar</button>
     </form>
 
-    <p>Ha ingresado el n&uacute;mero <code>{{ numero }}</code> y elevado al cuadrado da como resultado <strong>{{ numeroAlCuadrado(numero) }}</strong></p>
+    <p>Ha ingresado el n&uacute;mero <code>{{ numero | number }} ({{ numero }})</code> y elevado al cuadrado da como resultado <strong>{{ numeroAlCuadrado(numero) | number }}</strong></p>
     
     
     <table class="table table-striped">
@@ -36,8 +36,8 @@
         </thead>
         <tbody>
             <tr ng-repeat="num in numeros">
-                <td>{{ num }}</td>
-                <td>{{ numeroAlCuadrado(num) }}</td>
+                <td>{{ num | number : 2 }}</td>
+                <td>{{ numeroAlCuadrado(num) | number }}</td>
                 <td>
                     <a ng-click="eliminarNumero(num)" class="btn btn-default">
                         <span class="glyphicon glyphicon-trash"></span>
