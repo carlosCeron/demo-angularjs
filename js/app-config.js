@@ -27,5 +27,5 @@ bibliotecaApp.config(['$routeProvider', configurarRutas]);
 
 bibliotecaApp.controller('mainController',      ['$scope', '$window', mainController]);
 bibliotecaApp.controller('booksListController', ['$scope', booksListController]);
-bibliotecaApp.controller('editBookController',  ['$scope', '$routeParams', editBookController]);
-bibliotecaApp.controller('newBookController',   ['$scope', newBookController]);
+bibliotecaApp.controller('editBookController',  ['$scope', '$location', '$routeParams', editBookController]);
+bibliotecaApp.controller('newBookController',   ['$scope', '$location', newBookController]);

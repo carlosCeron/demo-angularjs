@@ -1,3 +1,5 @@
+var repo = repository();
+
 function mainController($scope, $window) {
     
     $scope.numeros = [];
@@ -26,3 +28,46 @@ function mainController($scope, $window) {
     
 }
 
+function booksListController($scope) {
+    
+    $scope.books = repo.getAll();
+    
+    $scope.eliminar = function (book) {
+        repo.remove(book);
+    };
+    
+}
+
+function editBookController($scope, $location, $routeParams) {
+    
+    var book = repo.get($routeParams.bookId);
+    
+    $scope.title = book.title;
+    $scope.author = book.author;
+    $scope.description = book.description;
+    $scope.year = book.year;
+    
+    $scope.guardar = function () {
+        
+        book.title = $scope.title;
+        book.author = $scope.author;
+        book.desciption = $scope.desciption;
+        book.year = $scope.year;
+        $location.path('/list');
+    };
+    
+}
+
+function newBookController($scope, $location) {
+    
+    $scope.title = null;
+    $scope.author = null;
+    $scope.desciption = null;
+    $scope.year = (new Date()).getFullYear();
+    
+    $scope.guardar = function () {
+        repo.add($scope.title, $scope.author, $scope.description, $scope.year);
+        $location.path('/list');
+    };
+    
+}
