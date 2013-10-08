@@ -1,1 +1,30 @@
 <h2>Book List</h2>
+
+<div>
+    <a ng-click="agregar()" class="btn btn-default btn-success"><span class="glyphicon glyphicon-plus"></span> Agregar</a>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Titulo</th>
+            <th>Author</th>
+            <th>A&ntilde;o</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="book in books" title="{{ book.description }}">
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.year }}</td>
+            <td>
+                <a href="#/edit/{{ book.id }}" class="btn btn-default">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </a>
+                <a ng-click="eliminar(book)" class="btn btn-default">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
