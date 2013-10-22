@@ -46,6 +46,7 @@
                     <th>Titulo</th>
                     <th>Author</th>
                     <th>A&ntilde;o</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -54,7 +55,7 @@
                     <td>{{ book.author }}</td>
                     <td>{{ book.year }}</td>
                     <td>
-                        <a href="#/edit/{{ book.id }}" class="btn btn-default">
+                        <a href="#/edit/{{ book.objectId }}" class="btn btn-default">
                             <span class="glyphicon glyphicon-pencil"></span>
                         </a>
                         <a ng-click="eliminar(book)" class="btn btn-default">
@@ -147,6 +148,7 @@
     
     <!-- /templates -->
     
+    <script src="js/parse-1.2.12.js"></script>
     <script src="js/repository.js"></script>
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/angular-1.0.8.js"></script>
